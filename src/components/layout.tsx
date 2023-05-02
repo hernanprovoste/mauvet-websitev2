@@ -1,5 +1,4 @@
 import React from "react";
-import { Container } from "@nextui-org/react";
 
 type Props = {
   children?: React.ReactNode

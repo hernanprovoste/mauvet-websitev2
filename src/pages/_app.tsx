@@ -1,19 +1,18 @@
+import { MantineProvider } from '@mantine/core'
 import type { AppProps } from 'next/app'
-import {createTheme, NextUIProvider} from "@nextui-org/react";
+import Head from 'next/head'
 
-const lightTheme = createTheme({
-  type: "light",
-  theme: {
-    colors: {
-      primary: "#0072F5",
-      background: "#ffffff"
-    }
-  }
-})
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    <NextUIProvider theme={lightTheme}>
+    <>
+    <Head>
+      <title>MauVet</title>
+      <meta name="viewport" content="minimum-scale=1, initial-scale=1, width=device-width" />
+    </Head>
+
+    <MantineProvider withGlobalStyles withNormalizeCSS theme={{colorScheme: 'light'}}>
       <Component {...pageProps} />
-    </NextUIProvider>
+    </MantineProvider>
+    </>
   )
 }
