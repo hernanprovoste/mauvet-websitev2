@@ -2,16 +2,9 @@ import { Navbar, Link, Text, Avatar, Dropdown } from "@nextui-org/react";
 
 export const Header_Navbar = () => {
   const collapseItems = [
-    "Profile",
-    "Dashboard",
-    "Activity",
-    "Analytics",
-    "System",
-    "Deployments",
-    "My Settings",
-    "Team Settings",
-    "Help & Feedback",
-    "Log Out",
+    "Home",
+    "Servicios",
+    "Profesionales"
   ];
 
   return (
@@ -39,20 +32,20 @@ export const Header_Navbar = () => {
         hideIn="xs"
         variant="underline"
       >
-        <Navbar.Link href="#">Features</Navbar.Link>
-        <Navbar.Link isActive href="#">
-          Customers
+        <Navbar.Link isActive href="#home">Home</Navbar.Link>
+        <Navbar.Link href="#servicios">
+          Servicios
         </Navbar.Link>
-        <Navbar.Link href="#">Pricing</Navbar.Link>
+        <Navbar.Link href="#">Profesionales</Navbar.Link>
         <Navbar.Link href="#">Company</Navbar.Link>
       </Navbar.Content>
-      <Navbar.Collapse disableAnimation>
+      <Navbar.Collapse >
         {collapseItems.map((item, index) => (
           <Navbar.CollapseItem
             key={item}
             activeColor="warning"
             css={{
-              color: index === collapseItems.length - 1 ? "$error" : "",
+              color: index === collapseItems.length - 1 ? "$primary" : "",
             }}
             isActive={index === 2}
           >
@@ -61,7 +54,7 @@ export const Header_Navbar = () => {
               css={{
                 minWidth: "100%",
               }}
-              href="#"
+              href={`#${item.toLowerCase()}`}
             >
               {item}
             </Link>
