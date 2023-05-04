@@ -1,5 +1,6 @@
 import { createStyles, Text, Container, ActionIcon, Group, rem } from '@mantine/core';
 import { IconBrandTwitter, IconBrandYoutube, IconBrandInstagram } from '@tabler/icons-react';
+import { useRouter } from 'next/router';
 // import { MantineLogo } from '@mantine/ds';
 
 const useStyles = createStyles((theme) => ({
@@ -107,6 +108,8 @@ interface FooterLinksProps {
 
 export function FooterLinks({ data }: FooterLinksProps) {
   const { classes } = useStyles();
+  const route = useRouter();
+  const year = new Date().getFullYear()
 
   const groups = data.map((group) => {
     const links = group.links.map((link, index) => (
@@ -115,7 +118,9 @@ export function FooterLinks({ data }: FooterLinksProps) {
         className={classes.link}
         component="a"
         href={link.link}
-        onClick={(event) => event.preventDefault()}
+        onClick={(event) => {
+          event.preventDefault()
+          route.push('mailto:reservamauvet@gmail.com')}}
       >
         {link.label}
       </Text>
@@ -134,26 +139,20 @@ export function FooterLinks({ data }: FooterLinksProps) {
       <Container className={classes.inner}>
         <div className={classes.logo}>
           {/* <MantineLogo size={30} /> */}
-          <h1>Logo</h1>
+          <h1>Mauvet</h1>
           <Text size="xs" color="dimmed" className={classes.description}>
-            Build fully functional accessible web applications faster than ever
+            Desde 2004 atendiendo a sus fieles compañeros 😺😺
           </Text>
         </div>
         <div className={classes.groups}>{groups}</div>
       </Container>
       <Container className={classes.afterFooter}>
         <Text color="dimmed" size="sm">
-          © 2020 mantine.dev. All rights reserved.
+          {`© ${year} Mauvet. Todos los derechos reservados.`}
         </Text>
 
         <Group spacing={0} className={classes.social} position="right" noWrap>
-          <ActionIcon size="lg">
-            <IconBrandTwitter size="1.05rem" stroke={1.5} />
-          </ActionIcon>
-          <ActionIcon size="lg">
-            <IconBrandYoutube size="1.05rem" stroke={1.5} />
-          </ActionIcon>
-          <ActionIcon size="lg">
+          <ActionIcon size="lg" onClick={() => route.push("https://www.instagram.com/clinicamauvet/")}>
             <IconBrandInstagram size="1.05rem" stroke={1.5} />
           </ActionIcon>
         </Group>

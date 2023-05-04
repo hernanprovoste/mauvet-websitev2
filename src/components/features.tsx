@@ -9,26 +9,26 @@ import {
     Container,
     rem,
   } from '@mantine/core';
-  import { IconGauge, IconUser, IconCookie } from '@tabler/icons-react';
+  import { IconClipboardHeart, IconVaccine, IconHeart } from '@tabler/icons-react';
   
   const mockdata = [
     {
-      title: 'Extreme performance',
+      title: 'Medicina General',
       description:
-        'This dust is actually a powerful poison that will even make a pro wrestler sick, Regice cloaks itself with frigid air of -328 degrees Fahrenheit',
-      icon: IconGauge,
+        'Nuestra medicina general está diseñada para mantener a tus amigos felinos en su mejor estado de salud.',
+      icon: IconClipboardHeart,
     },
     {
-      title: 'Privacy focused',
+      title: 'Enfermedades Renales',
       description:
-        'People say it can run at the same speed as lightning striking, Its icy body is so cold, it will not melt even if it is immersed in magma',
-      icon: IconUser,
+        'Ofrecemos tratamientos especializados para enfermedades renales en gatos, ayudando a mantener a tus amigos felinos saludables',
+      icon: IconVaccine,
     },
     {
-      title: 'No third parties',
+      title: 'Cardiologia',
       description:
-        'They’re popular, but they’re rare. Trainers who show them off recklessly may be targeted by thieves',
-      icon: IconCookie,
+        'Nuestros servicios de cardiología para gatos están diseñados para prevenir y tratar enfermedades cardíacas en tus amigos felinos.',
+      icon: IconHeart,
     },
   ];
   
@@ -94,17 +94,16 @@ import {
       <Container size="lg" py="xl">
         <Group position="center">
           <Badge variant="filled" size="lg">
-            Best company ever
+            Nuestros Servicios
           </Badge>
         </Group>
   
         <Title order={2} className={classes.title} ta="center" mt="sm">
-          Integrate effortlessly with any technology stack
+          Porque tus peluditos son nuestra prioridad
         </Title>
   
         <Text c="dimmed" className={classes.description} ta="center" mt="md">
-          Every once in a while, you’ll see a Golbat that’s missing some fangs. This happens when
-          hunger drives it to try biting a Steel-type Pokémon.
+          Contamos con veterinarios especializados para el cuidado de gatos. Equipo altamente capacitado para mantener a tus amigos felinos saludables y felices.
         </Text>
   
         <SimpleGrid cols={3} spacing="xl" mt={50} breakpoints={[{ maxWidth: 'md', cols: 1 }]}>

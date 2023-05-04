@@ -5,42 +5,19 @@ import { HeaderResponsive } from "@/components/navbar";
 import {HeroBullets} from "@/components/jumbotron";
 import { FeaturesCards } from '@/components/features';
 import { FooterLinks } from '@/components/footer';
+import { FeaturesGrid } from '@/components/doctors';
 
 const inter = Inter({ subsets: ['latin'] })
 
 const links = [
-  { "link": "/about", "label": "Features" },
-  { "link": "/pricing", "label": "Pricing" },
-  { "link": "/learn", "label": "Learn" },
-  { "link": "/community", "label": "Community" }
+  { "link": "#", "label": "Reserva tu hora 😄" },
 ]
 
 const data = [
   {
-    "title": "About",
+    "title": "Reserva tu hora",
     "links": [
-      { "label": "Features", "link": "#" },
-      { "label": "Pricing", "link": "#" },
-      { "label": "Support", "link": "#" },
-      { "label": "Forums", "link": "#" }
-    ]
-  },
-  {
-    "title": "Project",
-    "links": [
-      { "label": "Contribute", "link": "#" },
-      { "label": "Media assets", "link": "#" },
-      { "label": "Changelog", "link": "#" },
-      { "label": "Releases", "link": "#" }
-    ]
-  },
-  {
-    "title": "Community",
-    "links": [
-      { "label": "Join Discord", "link": "#" },
-      { "label": "Follow on Twitter", "link": "#" },
-      { "label": "Email newsletter", "link": "#" },
-      { "label": "GitHub discussions", "link": "#" }
+      { "label": "Hazlo aqui", "link": "#" },
     ]
   }
 ]
@@ -49,8 +26,8 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Veterinaria Mauvet</title>
-        <meta name="description" content="Veterinaria Mauvet" />
+        <title>Clinica Felina Mauvet</title>
+        <meta name="description" content="Clinica Felina Mauvet" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
@@ -58,6 +35,7 @@ export default function Home() {
         <HeaderResponsive links={links}  />
         <HeroBullets />
         <FeaturesCards />
+        <FeaturesGrid />
         <FooterLinks data={data} />
       </Layout>
     </>
